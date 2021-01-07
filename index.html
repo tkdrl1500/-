@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>도꺠비 뮤비</title>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <!--header-->
+    <header> <!--<header class="logo"> 굳이 class 노노-->
+        <div class="logo">
+            <a href="https://www.youtube.com/">
+            <i class="fab fa-youtube">
+                 <!--i태그 안에 span태크 넣어야지!!!-->
+            </i>
+            <span class="title">Youtube</span>
+        </a>
+        </div>
+
+        <div class="icons"> <!--span이 아니라 div 했음-->
+            <i class="fas fa-search"></i>
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </header>
+    
+    <!--video player-->
+    <section class="player">
+        <video controls autoplay loop poster="/img/gongu.jpg" src="/img/KakaoTalk_20201230_141842920.mp4"></video>
+    </section>
+
+    <div class="infoAndUpNext"> <!--정렬하기 편하게 상자에 info와 upNext를 넣어둠-->
+        <!--video info-->
+    <section class="info">
+        <!--해쉬 태그-->
+        <div class="metadata"> <!--ul태크 아님-->
+            <ul class="hashtags"> <!--여기서 ul 태크 써야됨-->
+                <li>#도깨비1</li> <!--<li class="tag1"> 노노 그냥 li-->
+                <li>#도깨비2</li>
+                <li>#도깨비3</li>
+            </ul>
+
+            <!--타이틀 버튼-->
+        <div class="titleAndButton"> <!--<span class="title">공유는 주유소</span> 이거 아님-->
+            <span class="title clamp">
+                도깨비 신부와 울었다가 웃었다가 맴찢하는 드라마, 그리고 저승이와 써니의 애틋한 사랑을 시작려한다. 하지만, 그들은 전생에 큰 관련이 있는 것으로 보이는데 과연 그들의 운명은 어떻게 될것인가...... 매주 월요일 25시 많은 시청 바랍니다.
+            </span> 
+        <button class="moreBtn"> <!--button에 class 추가해야됨-->
+            <i class="fas fa-sort-down"></i>
+        </button> 
+        </div>
+            <span class="views">1M views 1 month ago</span>
+        </div>
+        <!--액션 버튼-->
+        <ul class="actions">
+            <li>
+                <button>
+                    <i class="active fas fa-thumbs-up"></i><span>1K</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fas fa-thumbs-down"></i><span>0</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fas fa-share"></i><span>Share</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fas fa-plus"></i><span>Save</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fas fa-flag"></i><span>Report</span>
+                </button>
+            </li>
+        </ul>
+
+        <!--channel Description-->
+        <div class="channel"> <!--추가 해줌-->
+            <div class="metadata">
+                <img src="/img/프로필.jpg"> <!--<img src="/img/프로필.jpg" alt="" class="profle"> 노노-->
+                <div class="info">
+                    <span class="name">
+                        도깨비 신부
+                    </span>
+                    <span class="subscribers">
+                        1M subscribers
+                    </span>
+                </div>
+            </div>
+
+            <div id="like_button_container"></div>
+            <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+            <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+             <!-- Load our React component. -->
+            <script src="like_button.js"></script>
+
+            <button class="subscribe">subscribe</button>
+        </div>
+            <!--Comment-->
+<div class="comment">
+    <div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://go-youtube.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </section>
+
+    <!--Up next-->
+    <section class="upNext">
+        <span class="title">Up next</span>
+        <ul>
+
+            <li class="item">
+                <div class="img"><img src="/img/도꺠비 1화.jpg" alt=""></div> <!--반응형으로 만들기위해 박스안에 이미지를 넣었음-->
+                <div class="info">
+                    <span class="title">도깨비 본편 1화</span>
+                    <span class="name">도깨비 신부</span>
+                    <span class="views">99k views</span>
+                </div>
+                <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+
+            <li class="item">
+                <div class="img"><img src="/img/도꺠비 2화.jpg" alt=""></div>
+                <div class="info">
+                    <span class="title">도깨비 본편 2화</span>
+                    <span class="name">도깨비 신부</span>
+                    <span class="views">99k views</span>
+                </div>
+                <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+
+            <li class="item">
+                <div class="img"><img src="/img/도꺠비 3화.jpg" alt=""></div>
+                <div class="info">
+                    <span class="title">도깨비 본편 3화</span>
+                    <span class="name">도깨비 신부</span>
+                    <span class="views">99k views</span>
+                </div>
+                <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+
+            <li class="item">
+                <div class="img"><img src="/img/경이로운소문 1화.jpg" alt=""></div>
+                <div class="info">
+                    <span class="title">경이로운 소문 본편 1화</span>
+                    <span class="name">소문이</span>
+                    <span class="views">99k views</span>               
+            </div>
+            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+
+            <li class="item">
+                <div class="img"><img src="/img/경이로운 소문 2화.jpg" alt=""></div>
+                <div class="info">
+                    <span class="title">경이로운 소문 본편 2화</span>
+                    <span class="name">소문이</span>
+                    <span class="views">99k views</span>               
+            </div>
+            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+
+            <li class="item">
+                <div class="img"><img src="/img/경이로운 소문 3화.jpg" alt=""></div>
+                <div class="info">
+                    <span class="title">경이로운 소문 본편 3화</span>
+                    <span class="name">소문이</span>
+                    <span class="views">99k views</span>               
+            </div>
+            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+
+            <li class="item">
+                <div class="img"><img src="/img/여신강림 1화.jpg" alt=""></div>
+                <div class="info">
+                    <span class="title">여신강림 본편 1화</span>
+                    <span class="name">남신</span>
+                    <span class="views">99k views</span>
+                </div>
+                <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+
+            <li class="item">
+                <div class="img"><img src="/img/여신강림 2화.jpg" alt=""></div>
+                <div class="info">
+                    <span class="title">여신강림 본편 2화</span>
+                    <span class="name">남신</span>
+                    <span class="views">99k views</span>
+                </div>
+                <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+
+            <li class="item">
+                <div class="img"><img src="/img/여신강림 3화.jpg" alt=""></div>
+                <div class="info">
+                    <span class="title">여신강림 본편 3화</span>
+                    <span class="name">남신</span>
+                    <span class="views">99k views</span>
+                </div>
+                <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+        </ul>
+        
+    </section>
+    
+    </div>
+    
+    
+</body>
+</html>
