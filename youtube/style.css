@@ -1,0 +1,263 @@
+:root {
+  /*color*/
+  --white-color: #fff;
+  --black--color: #140a00;
+  --blue--color: #045fd4;
+  --red--color: #ff0000;
+  --grey--dark-color: #909090;
+  --grey--light-color: #e0e0e0;
+
+  /*size*/
+  --padding: 12px;
+  --avatar-size: 36px;
+
+  /*font size*/
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /*패딩이나 마진 주었을때 그것이 포함되어 사이즈가 결정 되도록 설정*/
+}
+
+body {
+  font-family: Roboto;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--black--color);
+  color: var(--white-color);
+  padding: var(--padding);
+}
+
+header .logo {
+  font-size: var(--font-large);
+}
+
+header .logo a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+header .logo i {
+  color: var(--red--color);
+}
+
+header .icons .fa-search {
+  margin-right: var(--padding);
+}
+
+/*SASS & LESS
+묶어서 쓰게해서 작성하는 코드의 양의 줄여준다.
+header {
+  .logo {
+
+  }
+  
+  .icons {
+
+  }
+}*/
+
+/*video player*/
+.player {
+  text-align: center;
+  background-color: var(--black--color);
+  /*position: sticky;
+  top: 0;*/
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 745px;
+}
+
+body > .info {
+  padding: var(--padding);
+}
+
+.info .metadata .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue--color);
+}
+
+.info .metadata .hashtags li {
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton {
+  display: flex;
+}
+
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-medium);
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+  transition: transform 300ms ease-in-out; /*애니메이션을 주었다. transform을 300ms 동안 ease-in-out했다*/
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+  transform: rotate(
+    180deg
+  ); /*transform은 포지션, 스케일, 로테이션을 바꿀수 있는데, 180도로 바꿨다*/
+}
+
+.info .views {
+  font-size: var(--font-small);
+  color: var(--grey--dark-color);
+}
+
+.info .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding) 0;
+}
+
+.info .actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey--dark-color);
+}
+
+.info .actions button i {
+  margin: 0 auto; /*왼쪽으로 치우진 아이콘을 가운데로 위아래 지정 말고 양옆을 오토로 지정하면 됨*/
+  margin-bottom: calc(var(--padding) / 2); /*패딩의 사이즈의 반만 */
+  font-size: 16px;
+}
+
+.info .actions button i.active {
+  color: var(--blue--color);
+}
+
+.info .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey--light-color);
+  border-bottom: 1px solid var(--grey--light-color);
+}
+
+.info .channel .metadata {
+  display: flex;
+  align-items: center; /*프로필과 글씨 가운데 정렬*/
+}
+
+.info .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%; /*사진 둥그렇게*/
+}
+
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column; /*얘만 따로쓰니까 안되고 flex랑 같이 사용*/
+}
+
+.info .channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+
+.info .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey--dark-color);
+}
+
+.info .channel .subscribe {
+  text-transform: uppercase; /*대문자로 바꿈*/
+  color: var(--red--color);
+  font-size: var(--font-medium);
+}
+
+/*UP Next */
+
+.upNext {
+  padding: 0 var(--padding);
+}
+
+.upNext > .title {
+  /* >: 자식노드 셀렉터, 바로 뒤에 오는 자식들만 적용*/
+  font-size: var(--font-medium);
+  color: var(--grey--dark-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.upNext .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+
+.upNext .item .img {
+  flex: 1 1 35%; /*줄어들 떄나 늘어날떄나 1 1로 늘어나고, 35%만 차지하게 함*/
+  margin-right: var(--padding);
+}
+
+.upNext .item .img img {
+  width: 100%;
+}
+
+.upNext .item .info {
+  flex: 1 1 60%;
+}
+
+.upNext .item .moreBtn {
+  height: 100%;
+  flex: 1 1 5%;
+}
+
+.upNext .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.upNext .item .info .title {
+  font-size: var(--font-small);
+}
+
+.upNext .item .info .name,
+.upNext .item .info .views {
+  font-size: var(--font-micro);
+  color: var(--grey--dark-color);
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
+
+
+
